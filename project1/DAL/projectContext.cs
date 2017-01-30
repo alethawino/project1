@@ -13,6 +13,8 @@ namespace project1.DAL
     {
         public projectContext() : base("project context") { }
         public DbSet<album> album { get; set; }
+        public DbSet<song> song { get; set; }
+        public DbSet<bands> bands { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
