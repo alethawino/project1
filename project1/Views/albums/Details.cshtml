@@ -43,14 +43,36 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.price)
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.price)
+            @Html.DisplayFor(model => model.Price)
         </dd>
 
     </dl>
+</div>
+<div>
+<h3>
+    Songs and Albums
+
+</h3>
+    <dl class="dl-horizontal">
+        @foreach (project1.Models.song song in Model.songs) {
+
+        <dt>
+            @song.ID
+           
+        </dt>
+        <dd>
+            @Html.ActionLink(song.Name,"../songs/details",new {id = song.ID} )
+
+        </dd>
+        }
+    </dl>
+
+
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |

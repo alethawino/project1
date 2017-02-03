@@ -9,6 +9,10 @@ namespace project1.Models
     public class album
     {
         public int id { get; set; }
+        public album() {
+            songs = new HashSet<song>();
+
+        }
 
         
 
@@ -23,6 +27,7 @@ namespace project1.Models
         public decimal Price { get; set; }
         public virtual ICollection<song> songs { get; set; }
         public virtual bands band { get; set; }
+    
         
         
 

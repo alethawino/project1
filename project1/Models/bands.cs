@@ -8,6 +8,11 @@ namespace project1.Models
 {
     public class bands
     {
+        public bands()
+        {
+            albums = new HashSet<album>();
+        }
+
         public int ID { get; set; }
 
         public String Name { get; set; }

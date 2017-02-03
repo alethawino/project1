@@ -158,6 +158,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\albumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\songsController.cs" />
     <Compile Include="DAL\projectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +178,10 @@
     <Compile Include="Migrations\201701301543225_name3.cs" />
     <Compile Include="Migrations\201701301543225_name3.Designer.cs">
       <DependentUpon>201701301543225_name3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702031444009_name5.cs" />
+    <Compile Include="Migrations\201702031444009_name5.Designer.cs">
+      <DependentUpon>201702031444009_name5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\album.cs" />
@@ -227,6 +232,11 @@
     <Content Include="Views\albums\Details.cshtml" />
     <Content Include="Views\albums\Edit.cshtml" />
     <Content Include="Views\albums\Index.cshtml" />
+    <Content Include="Views\songs\Create.cshtml" />
+    <Content Include="Views\songs\Delete.cshtml" />
+    <Content Include="Views\songs\Details.cshtml" />
+    <Content Include="Views\songs\Edit.cshtml" />
+    <Content Include="Views\songs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701301543225_name3.resx">
       <DependentUpon>201701301543225_name3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702031444009_name5.resx">
+      <DependentUpon>201702031444009_name5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

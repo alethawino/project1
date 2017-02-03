@@ -11,107 +11,107 @@ using project1.Models;
 
 namespace project1.Controllers
 {
-    public class albumsController : Controller
+    public class songsController : Controller
     {
         private projectContext db = new projectContext();
 
-        // GET: albums
+        // GET: songs
         public ActionResult Index()
         {
-            return View(db.album.ToList());
+            return View(db.song.ToList());
         }
 
-        // GET: albums/Details/5
+        // GET: songs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            album album = db.album.Find(id);
-            if (album == null)
+            song song = db.song.Find(id);
+            if (song == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(song);
         }
 
-        // GET: albums/Create
+        // GET: songs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: albums/Create
+        // POST: songs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,names,yearReleased,producer,recodLabel,Price")] album album)
+        public ActionResult Create([Bind(Include = "ID,Name,Lyrics,Duration")] song song)
         {
             if (ModelState.IsValid)
             {
-                db.album.Add(album);
+                db.song.Add(song);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(album);
+            return View(song);
         }
 
-        // GET: albums/Edit/5
+        // GET: songs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            album album = db.album.Find(id);
-            if (album == null)
+            song song = db.song.Find(id);
+            if (song == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(song);
         }
 
-        // POST: albums/Edit/5
+        // POST: songs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,names,yearReleased,producer,recodLabel,Price")] album album)
+        public ActionResult Edit([Bind(Include = "ID,Name,Lyrics,Duration")] song song)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(album).State = EntityState.Modified;
+                db.Entry(song).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(album);
+            return View(song);
         }
 
-        // GET: albums/Delete/5
+        // GET: songs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            album album = db.album.Find(id);
-            if (album == null)
+            song song = db.song.Find(id);
+            if (song == null)
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(song);
         }
 
-        // POST: albums/Delete/5
+        // POST: songs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            album album = db.album.Find(id);
-            db.album.Remove(album);
+            song song = db.song.Find(id);
+            db.song.Remove(song);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
