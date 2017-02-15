@@ -33,12 +33,14 @@ namespace project1.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(album);
         }
 
         // GET: albums/Create
         public ActionResult Create()
         {
+            ViewBag.band = db.bands.ToList();
             return View();
         }
 
@@ -47,15 +49,18 @@ namespace project1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,names,yearReleased,producer,recodLabel,Price")] album album)
+        public ActionResult Create([Bind(Include = "id,names,yearReleased,producer,recodLabel,Price")] album album,int band)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
+
             {
+                album.band = db.bands.Find(band);
                 db.album.Add(album);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            
+            
             return View(album);
         }
 
@@ -64,6 +69,7 @@ namespace project1.Controllers
         {
             if (id == null)
             {
+                
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             album album = db.album.Find(id);
@@ -81,10 +87,12 @@ namespace project1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,names,yearReleased,producer,recodLabel,Price")] album album)
+        public ActionResult Edit([Bind(Include = "id,names,yearReleased,producer,recodLabel,Price")] album album,int band)
+
         {
             if (ModelState.IsValid)
             {
+                album.band = db.bands.Find(band);
                 db.Entry(album).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
