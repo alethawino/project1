@@ -71,6 +71,8 @@ namespace project1.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.band = db.bands.ToList();
+            ViewBag.albumBands = album.band.ID;
             return View(album);
         }
 

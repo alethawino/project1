@@ -14,13 +14,13 @@ namespace project1.Models
 
         }
 
-        
 
+        [Display(Name = " Names")]
         public string names { get; set; }
 
         [Display(Name =" Year Released")]
         public int yearReleased { get; set; }
-        
+        [Display(Name = "Producer ")]
         public string producer { get; set; }
         [Display(Name = "Record Label")]
         public string recodLabel { get; set; }

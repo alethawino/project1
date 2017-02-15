@@ -58,6 +58,28 @@
         </div>
 
         <div class="form-group">
+            
+         
+           @Html.LabelFor(model => model.band, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="band" class="selectpicker">
+                    @foreach (project1.Models.bands band in ViewBag.band)
+                    {
+
+                        if (@band.ID == ViewBag.albumBands)
+                        {
+                            <option value="@band.ID" selected>@band.Name</option>
+                        }
+                        else
+                        {
+                        <option value="@band.ID">@band.Name</option> 
+                        }
+                        
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
