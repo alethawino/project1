@@ -26,6 +26,7 @@ namespace project1.Models
         public string recodLabel { get; set; }
         public decimal Price { get; set; }
         public virtual ICollection<song> songs { get; set; }
+        [Display(Name = "Band")]
         public virtual bands band { get; set; }
     
         

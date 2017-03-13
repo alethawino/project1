@@ -157,6 +157,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\albumsController.cs" />
+    <Compile Include="Controllers\bandsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\songsController.cs" />
     <Compile Include="DAL\projectContext.cs" />
@@ -307,6 +308,11 @@
     <Content Include="Views\songs\Details.cshtml" />
     <Content Include="Views\songs\Edit.cshtml" />
     <Content Include="Views\songs\Index.cshtml" />
+    <Content Include="Views\bands\Create.cshtml" />
+    <Content Include="Views\bands\Delete.cshtml" />
+    <Content Include="Views\bands\Details.cshtml" />
+    <Content Include="Views\bands\Edit.cshtml" />
+    <Content Include="Views\bands\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

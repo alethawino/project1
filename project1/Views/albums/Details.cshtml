@@ -49,6 +49,13 @@
         <dd>
             @Html.DisplayFor(model => model.Price)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.band)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(Model.band.Name, "../bands/details", new { id = Model.band.ID })
+        </dd>
 
     </dl>
 </div>
