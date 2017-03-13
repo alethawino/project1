@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using project1.DAL;
 using project1.Models;
+using System.Diagnostics;
 
 namespace project1.Controllers
 {
@@ -18,6 +19,7 @@ namespace project1.Controllers
         // GET: albums
         public ActionResult Index()
         {
+            Debug.WriteLine("here");
             return View(db.album.ToList());
         }
 
