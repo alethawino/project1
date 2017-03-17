@@ -25,6 +25,18 @@
         <dd>
             @Html.DisplayFor(model => model.genre)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.albums)
+        </dt>
+        @foreach (project1.Models.album album in Model.albums )
+        {
+            
+   
+            <dd>
+                @Html.DisplayFor(model => album.names)
+            </dd>
+
+        }
 
     </dl>
 </div>

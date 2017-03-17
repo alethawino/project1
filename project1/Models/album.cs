@@ -28,6 +28,7 @@ namespace project1.Models
         public virtual ICollection<song> songs { get; set; }
         [Display(Name = "Band")]
         public virtual bands band { get; set; }
+        public int? Band_ID { get; set; }
     
         
         

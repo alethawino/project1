@@ -18,6 +18,8 @@ namespace project1.Models
         public String Name { get; set; }
         [Display(Name = "Genre")]
         public String genre { get; set; }
+
+        [Display(Name = "Albums")]
         public virtual ICollection<album> albums { get; set; } 
 
 

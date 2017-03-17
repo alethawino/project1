@@ -111,6 +111,7 @@ namespace project1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             song song = db.song.Find(id);
+         
             db.song.Remove(song);
             db.SaveChanges();
             return RedirectToAction("Index");
