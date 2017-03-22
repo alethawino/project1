@@ -28,6 +28,8 @@ namespace project1
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/bootstrap-select.min.css"));
+            bundles.Add(new StyleBundle("~/Content/FontAwesome").Include(
+                "~/Content/font-awesome.min.css"));
         }
     }
 }

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<project1.Models.album>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2><i class="fa fa-search fa-lg" aria-hidden="true"></i>Index</h2>
+
+<p>
+    
+    @Html.ActionLink("Create New", "Create", null, new { @class = "createNew" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.names)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yearReleased)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recodLabel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.names)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yearReleased)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.producer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recodLabel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
