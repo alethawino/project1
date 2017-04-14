@@ -32,6 +32,16 @@
         var bandName = $("#bandName").val();
         console.log(albumName);
         console.log(bandName);
+        $.ajax({
+            type: "GET",
+            url: "/Albums/Search",
+            data: "albumname=" + albumName + "&bandname=" + bandName,
+            cache: false,
+            success: function (data) {
+                $("#searchResult").html(data);
+                console.log("yaeah came back successful");
+            }
+        });
 
     }
     $("#search").click(function () {

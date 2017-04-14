@@ -1,16 +1,10 @@
 ﻿@model IEnumerable<project1.Models.album>
+    @{ 
+        Layout = null;
+    }
 
-@{
-    ViewBag.Title = "Index";
 
-}
 
-<h2><i class="fa fa-search fa-lg" aria-hidden="true"></i>Index</h2>
-
-<p>
-    
-    @Html.ActionLink("Create New", "Create", null, new { @class = "createNew" })
-</p>
 <table class="table">
     <tr>
         <th>

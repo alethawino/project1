@@ -20,7 +20,8 @@ namespace project1.Models
         public String genre { get; set; }
 
         [Display(Name = "Albums")]
-        public virtual ICollection<album> albums { get; set; } 
+        public virtual ICollection<album> albums { get; set; }
+        
 
 
 

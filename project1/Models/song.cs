@@ -15,7 +15,8 @@ namespace project1.Models
 
         [Display(Name = "Album")]
         public virtual album album { get; set; }
-        
+       
+
 
     }
 }

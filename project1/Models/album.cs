@@ -29,6 +29,7 @@ namespace project1.Models
         [Display(Name = "Band")]
         public virtual bands band { get; set; }
         public int? Band_ID { get; set; }
+       
     
         
         

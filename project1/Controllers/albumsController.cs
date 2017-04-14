@@ -129,6 +129,12 @@ namespace project1.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Search(string AlbumName, string BandName)
+        {
+            List<album> Albums = db.album.Where(a => a.names.ToUpper().Contains(AlbumName.ToUpper()) && a.band.Name.ToUpper().Contains(BandName.ToUpper())).ToList();
+            return View(Albums);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
